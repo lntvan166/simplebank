@@ -10,5 +10,7 @@ migratedown:
 	migrate -path db/migration -database "postgresql://postgres:handsome2022@localhost:2345/simple_bank?sslmode=disable" -verbose down
 sqlc:
 	sqlc generate
+test:
+	go test -v -cover ./...
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test 
