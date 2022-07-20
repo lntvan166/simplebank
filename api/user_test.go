@@ -109,7 +109,7 @@ func TestCreateUserAPI(t *testing.T) {
 				store.EXPECT().
 					CreateUser(gomock.Any(), gomock.Any()).
 					Times(1).
-					Return(db.User{}, &pq.Error{Code: "23505"})
+					Return(db.User{}, error(&pq.Error{Code: "23505"}))
 			},
 
 			checkResponse: func(recorder *httptest.ResponseRecorder) {
