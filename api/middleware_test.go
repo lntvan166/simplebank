@@ -51,6 +51,7 @@ func TestAuthMiddleware(t *testing.T) {
 			require.NoError(t, err)
 
 			// tc.setupAuth(t, request, server.tokenMaker)
+			// test
 			server.route.ServeHTTP(recorder, request)
 
 			tc.checkResponse(t, recorder)
