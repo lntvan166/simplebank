@@ -14,6 +14,7 @@ migratedown1:
 	migrate -path db/migration -database "postgresql://postgres:handsome2022@localhost:2345/simple_bank?sslmode=disable" -verbose down 1
 sqlc:
 	sqlc generate
+	sed -i 's/repository/entities/g' ./entities/models.go
 test:
 	go test -v -cover ./...
 server: 

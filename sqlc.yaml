@@ -2,7 +2,7 @@ version: "1"
 project:
     id: ""
 packages:
--   name: "db"
+-   name: "repository"
     path: "./db/sqlc"
     queries: "./db/query/"
     schema: "./db/migration"
@@ -12,4 +12,4 @@ packages:
     emit_interface: true
     emit_exact_table_names: false # accounts table -> Account struct 
     emit_empty_slices: true
-    
+    output_models_file_name: "../../entities/models.go"    
